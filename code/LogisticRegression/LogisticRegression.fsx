@@ -5,7 +5,7 @@ open FSharp.Data
 open FSharp.Charting
 
 [<Literal>]
-let DataPath = @"C:\DenverDevDay\MachineLearning\datasets\ex2data1.txt"
+let DataPath = __SOURCE_DIRECTORY__ + "/../datasets/ex2data1.txt"
 
 type DataSet = CsvProvider<DataPath>
 let data = DataSet.Load(DataPath)
@@ -53,6 +53,6 @@ Chart.Combine([
             .WithXAxis(Title=XTitle,Min=Array.min ex1-1.0,Max=Array.max ex1+1.0)
             .WithYAxis(Title=YTitle,Min=Array.min ex2-1.0,Max=Array.max ex2+1.0)
 
-let result = lra.Regression.Compute([| 50.0; 50.0 |])
+lra.Regression.Compute([| 70.0; 70.0 |])
 
 

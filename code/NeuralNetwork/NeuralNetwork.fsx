@@ -6,7 +6,7 @@ open FSharp.Data.CsvExtensions
 open Accord.Neuro
 open Accord.Neuro.Learning
 
-let train = CsvFile.Load("C:/DenverDevDay/MachineLearning/datasets/train.csv").Cache()
+let train = CsvFile.Load(__SOURCE_DIRECTORY__ + "/../datasets/train.csv").Cache()
 
 let y = Array.ofSeq(seq { for r in train.Rows ->
                                         let d = r.[0].AsFloat()

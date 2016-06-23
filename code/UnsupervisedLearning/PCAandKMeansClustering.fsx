@@ -5,7 +5,7 @@ open FSharp.Data
 open FSharp.Charting
 
 [<Literal>]
-let DataPath = @"C:\DenverDevDay\MachineLearning\datasets\iris.data"
+let DataPath = __SOURCE_DIRECTORY__ + "/../datasets/iris.data"
 
 type DataSet = CsvProvider<DataPath>
 let data = DataSet.Load(DataPath)

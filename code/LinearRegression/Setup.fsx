@@ -6,5 +6,6 @@
 #r "../packages/Accord.Math.3.1.0-alpha/lib/net45/Accord.Math.dll"
 #r "../packages/Accord.Statistics.3.1.0-alpha/lib/net45/Accord.Statistics.dll"
 #r "../packages/Accord.Neuro.3.1.0-alpha/lib/net45/Accord.Neuro.dll"
+#r "../packages/Accord.MachineLearning.3.1.0-alpha/lib/net45/Accord.MachineLearning.dll"
 
 #time "on"

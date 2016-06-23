@@ -4,7 +4,7 @@ open FSharp.Data
 open FSharp.Charting
 
 [<Literal>]
-let DataPath = @"C:\DenverDevDay\MachineLearning\datasets\ex1data1.txt"
+let DataPath = __SOURCE_DIRECTORY__ + "/../datasets/ex1data1.txt"
 
 type DataSet1 = CsvProvider<DataPath>
 let data = DataSet1.Load(DataPath)
@@ -30,11 +30,14 @@ let mse = sse/float x.Length
 let rmse = sqrt mse
 let r2 = slr.CoefficientOfDetermination(x, y)
 
-Chart.Combine([
-                Chart.Point(seq { for r in data.Rows -> (r.Population, r.Profit) })
-                Chart.Line([for x in Array.min x - 1.0 .. Array.max x + 1.0 -> (x, slr.Compute(x)) ], Color=Color.Red)
-              ])
-              .WithXAxis(Title=XTitle)
-              .WithYAxis(Title=YTitle)
+Chart.Combine(
+    [
+        Chart.Point(seq { for r in data.Rows -> (r.Population, r.Profit) })
+        Chart.Line([
+                    for x in [| Array.min x - 1.0 ; Array.max x + 1.0 |] -> (x, slr.Compute(x))
+                   ], Color=Color.Red)
+    ])
+    .WithXAxis(Title=XTitle)
+    .WithYAxis(Title=YTitle)
         
 
