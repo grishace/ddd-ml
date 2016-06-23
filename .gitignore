@@ -1,3 +1,5 @@
-**/bin
-**/obj
-**/packages
+**/bin/**
+**/obj/**
+**/packages/**
+**/.vs/**
+
