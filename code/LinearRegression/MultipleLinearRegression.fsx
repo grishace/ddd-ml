@@ -18,4 +18,39 @@ let mse = sse/float xs.Length
 let rmse = sqrt mse
 let r2 = mlr.CoefficientOfDetermination(xs, y)
 
-mlr.Compute([| 2500.0; 3.0 |])
+let example = [| 2500.0; 3.0 |]
+mlr.Compute(example)
+
+open System.Data
+open Accord.Statistics.Filters
+
+let nt = new DataTable()
+nt.Columns.Add("Size", typeof<float>)
+nt.Columns.Add("Bedrooms", typeof<float>)
+for x in xs do
+    nt.Rows.Add(x.[0], x.[1]) |> ignore
+
+let norm = Normalization(nt)
+
+let nms = norm.["Size"].Mean
+let nstdds = norm.["Size"].StandardDeviation
+let nmb = norm.["Bedrooms"].Mean
+let nstddb = norm.["Bedrooms"].StandardDeviation
+
+let ns = norm.Apply(nt)
+
+let nxs = Array.ofSeq(seq { for r in ns.Rows -> [| unbox<float> r.["Size"]; unbox<float> r.["Bedrooms"] |] })
+
+let mlrn = MultipleLinearRegression(2, true)
+let nsse = mlrn.Regress(nxs, y)
+let nmse = nsse/float nxs.Length
+let nrmse = sqrt nmse
+let nr2 = mlr.CoefficientOfDetermination(nxs, y)
+
+let nts = new DataTable()
+nts.Columns.Add("Size", typeof<float>)
+nts.Columns.Add("Bedrooms", typeof<float>)
+nts.Rows.Add(2500, 3) |> ignore
+let norms = norm.Apply(nts)
+
+mlrn.Compute([| unbox<float> norms.Rows.[0].["Size"]; unbox<float> norms.Rows.[0].["Bedrooms"] |])
