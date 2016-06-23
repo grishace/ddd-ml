@@ -50,7 +50,7 @@ let nr2 = mlr.CoefficientOfDetermination(nxs, y)
 let nts = new DataTable()
 nts.Columns.Add("Size", typeof<float>)
 nts.Columns.Add("Bedrooms", typeof<float>)
-nts.Rows.Add(2500, 3) |> ignore
+nts.Rows.Add(example.[0], example.[1]) |> ignore
 let norms = norm.Apply(nts)
 
 mlrn.Compute([| unbox<float> norms.Rows.[0].["Size"]; unbox<float> norms.Rows.[0].["Bedrooms"] |])
