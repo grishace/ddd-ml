@@ -156,7 +156,7 @@ June 24, 2016</small>
 
 ### XOR
 
-![XOR](./images/XOR.png)
+![XOR](./images/xor.png)
 
 ***
 
