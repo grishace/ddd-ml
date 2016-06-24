@@ -10,10 +10,11 @@ open Accord.Neuro.Learning
 let network = ActivationNetwork(SigmoidFunction(), 2, [| 2; 1 |])
 let teacher = new ParallelResilientBackpropagationLearning(network)
 
-let rec run (err:float) =
-  if err < 1e-5 then () else run (teacher.RunEpoch(x, y))  
+let rec run (perr:float) (err:float) =
+  let aerr = Math.Abs(perr-err)
+  if aerr < 1e-5 * perr then () else run err (teacher.RunEpoch(x, y))  
 
-run Double.PositiveInfinity
+run 0.0 Double.PositiveInfinity
 
 network.Compute([| 0.0; 0.0 |])
 network.Compute([| 0.0; 1.0 |])
