@@ -1,0 +1,29 @@
+img { 
+  border-style: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+
+div.slide-background.present {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.no-borders-table td {
+   border-style: none !important;
+}
+
+.fragment.dn {
+  display: none !important;
+}
+
+.fragment.dn.visible {
+  display: inline !important;
+}
+
+
+img[alt=Akka] { 
+  width: 620px !important;
+}
