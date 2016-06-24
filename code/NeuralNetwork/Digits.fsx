@@ -24,20 +24,20 @@ let digit n =
     let points = 
         [|
             for i in 0 .. 27 do
-                    for j in 0 .. 27 do
-                        let idx = i * 28 + j
-                        if x.[n].[idx] <> 0.0 then yield (j, -i) 
+                for j in 0 .. 27 do
+                    let idx = i * 28 + j
+                    if x.[n].[idx] <> 0.0 then yield (j, -i) 
         |]
     Chart.Point(points).WithMarkers(Size=15,Color=Color.Black)
-
 
 let network = ActivationNetwork(IdentityFunction(), 784, [| 5; 7; 10 |])
 let teacher = new ParallelResilientBackpropagationLearning(network)
 
 let rec run (perr:float) (err:float) =
   let aerr = Math.Abs(perr-err)
-  printfn "%f" aerr
-  if aerr < 0.000001 * perr then () else run err (teacher.RunEpoch(x, y))  
+  let eps = 1e-5 * perr
+  printfn "%f %f" aerr eps
+  if aerr < eps then () else run err (teacher.RunEpoch(x.[0..x.Length/2-1], y.[0..y.Length/2-1]))  
 
 run 0.0 Double.PositiveInfinity
 
