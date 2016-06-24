@@ -129,21 +129,37 @@ Encog - C#/Java, CUDA support<br/>
 </section>
 <section >
 <h3>Linear Regression</h3>
+<aside class="notes">
+linear regression is an approach for modeling the relationship between a scalar dependent variable y and one or more explanatory variables (or independent variables) denoted X. The case of one explanatory variable is called simple linear regression. For more than one explanatory variable, the process is called multiple linear regression.<br/>
+Ordinary least squares (OLS) is the simplest and thus most common estimator<br/>
+</aside>
 </section>
 <section >
 <h3>Logistic Regression</h3>
+<aside class="notes">
+Logistic regression is a regression model where the dependent variable (DV) is categorical.<br/>
+measures the relationship between the categorical dependent variable and one or more independent variables by estimating probabilities<br/>
+was developed by statistician David Cox in 1958<br/>
+used widely in many fields, including the medical and social sciences<br/>
+a business application would be to predict the likelihood of a homeowner defaulting on a mortgage<br/>
+</aside>
 </section>
 </section>
-<section >
 <section >
 <h3>Unsupervised Learning</h3>
 <ul>
 <li>K-Means</li>
 </ul>
-</section>
-<section >
-<h3>K-Means</h3>
-</section>
+<aside class="notes">
+Assign each observation to the cluster whose mean yields the least within-cluster sum of squares <br/>
+Calculate the new means to be the centroids of the observations in the new clusters<br/>
+</aside>
+'
+<aside class="notes">
+result often fails to separate the three Iris species contained in the data set<br/>
+The number of clusters k is an input parameter: an inappropriate choice of k may yield poor results<br/>
+The term "k-means" was first used by James MacQueen in 1967, though the idea goes back to Hugo Steinhaus in 1957.<br/>
+</aside>
 </section>
 <section >
 <section >
@@ -151,9 +167,35 @@ Encog - C#/Java, CUDA support<br/>
 <ul>
 <li>Neural Networks</li>
 </ul>
+<aside class="notes">
+Artificial - debatable that does the same as human brain<br/>
+Multi-layer networks use a variety of learning techniques, the most popular being back-propagation. Here, the output values are compared with the correct answer to compute the value of some predefined error-function. By various techniques, the error is then fed back through the network. Using this information, the algorithm adjusts the weights of each connection in order to reduce the value of the error function by some small amount. After repeating this process for a sufficiently large number of training cycles, the network will usually converge to some state where the error of the calculations is small<br/>
+1943 > 1954 (computational) > 1975 (back propagation) > 2000's (more improvements)<br/>
+</aside>
 </section>
 <section >
 <h3>XOR</h3>
+<table>
+  <tr>
+     <td></td>
+     <td>0</td>
+     <td>1</td>
+  </tr>
+  <tr>
+     <td>0</td>
+     <td>0</td>
+     <td>1</td>
+  </tr>
+  <tr>
+     <td>1</td>
+     <td>1</td>
+     <td>0</td>
+  </tr>
+</table>
+</section>
+<section >
+<h3>XOR</h3>
+<p><img src="./images/XOR.png" alt="XOR" /></p>
 </section>
 </section>
 <section >
