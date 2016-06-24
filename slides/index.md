@@ -5,6 +5,12 @@
 - transition : zoom
 
 ***
+- data-background : images/sponsors.png
+- data-background-transition : none
+
+' Sponsors slide (required by organizators)
+
+***
 
 ### Machine Learning With F#
 
