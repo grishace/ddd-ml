@@ -87,9 +87,19 @@ June 24, 2016</small>
 
 ### Linear Regression
 
+
+' linear regression is an approach for modeling the relationship between a scalar dependent variable y and one or more explanatory variables (or independent variables) denoted X. The case of one explanatory variable is called simple linear regression. For more than one explanatory variable, the process is called multiple linear regression.
+' Ordinary least squares (OLS) is the simplest and thus most common estimator
+
 ---
 
 ### Logistic Regression
+
+' Logistic regression is a regression model where the dependent variable (DV) is categorical.
+' measures the relationship between the categorical dependent variable and one or more independent variables by estimating probabilities
+' was developed by statistician David Cox in 1958
+' used widely in many fields, including the medical and social sciences
+' a business application would be to predict the likelihood of a homeowner defaulting on a mortgage
 
 ***
 
@@ -97,9 +107,12 @@ June 24, 2016</small>
 
 - K-Means
 
----
-
-### K-Means
+' Assign each observation to the cluster whose mean yields the least within-cluster sum of squares 
+' Calculate the new means to be the centroids of the observations in the new clusters
+'
+' result often fails to separate the three Iris species contained in the data set
+' The number of clusters k is an input parameter: an inappropriate choice of k may yield poor results
+' The term "k-means" was first used by James MacQueen in 1967, though the idea goes back to Hugo Steinhaus in 1957.
 
 ***
 
@@ -107,9 +120,37 @@ June 24, 2016</small>
 
 - Neural Networks
 
+' Artificial - debatable that does the same as human brain
+' Multi-layer networks use a variety of learning techniques, the most popular being back-propagation. Here, the output values are compared with the correct answer to compute the value of some predefined error-function. By various techniques, the error is then fed back through the network. Using this information, the algorithm adjusts the weights of each connection in order to reduce the value of the error function by some small amount. After repeating this process for a sufficiently large number of training cycles, the network will usually converge to some state where the error of the calculations is small
+' 1943 > 1954 (computational) > 1975 (back propagation) > 2000's (more improvements)
+
 ---
 
 ### XOR
+
+<table>
+  <tr>
+     <td></td>
+     <td>0</td>
+     <td>1</td>
+  </tr>
+  <tr>
+     <td>0</td>
+     <td>0</td>
+     <td>1</td>
+  </tr>
+  <tr>
+     <td>1</td>
+     <td>1</td>
+     <td>0</td>
+  </tr>
+</table>
+
+---
+
+### XOR
+
+![XOR](./images/XOR.png)
 
 ***
 
